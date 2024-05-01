@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Ticket Calculator</title>
+  </head>
+  <style>
+    #container{
+            width: 100%;
+            height: 100%;  
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+			      grid-template-rows: 1fr 4fr;
+               
+    } 
+    .drop_list{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 150px;
+      width: 320px;
+      height: 45px;
+      background-color: rgb(229, 223, 235);
+      box-shadow: 0 0 45px rgb(43, 19, 19);
+      border-radius: 15px;
+      font-size: 18px;
+    }
+    .txt{
+      text-align: center;
+      font-size: 28px;
+      width: 50%;    
+      margin-top: 15%;
+      margin-right: 35%;
+    }
+    .img{
+      width: 10vw;
+      height: 20vh;
+      border-radius: 100px;
+      border-style: solid;
+    }
+    .h1{
+      border-style: solid;
+      border-width: 200px; 
+    }
+    body{
+      background-color: rgb(4, 167, 255);
+    }
+
+  </style> 
+  <script>
+    let obj = {X5: 13000000,
+              X7: 14800000,
+              X8: 26200000,
+              X3: 8500000
+    }
+	
+    function Change2()
+    {
+        let box = document.querySelector(".car");
+        let key = box.value
+        let rez = document.querySelector("h1");
+        rez.innerHTML = "Your BMW is only: " +  obj[key]+" !";
+    }
+  </script>
+  <body>
+    <img class="img" src="https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg">
+    <div id = "container"> 
+    <select class="drop_list car" name="start" id="" onchange="Change2()";>
+        <option value="X5">BMW X5</option>
+        <option value="X7">BMW X7</option>
+        <option value="X8">BMW X8</option>
+        <option value="X3">BMW X3</option>
+    </select>
+    <br>
+    <h1 class="txt"></h1>  
+  </div>
+  </body>
+</html>
